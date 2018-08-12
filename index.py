@@ -1,3 +1,10 @@
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
+# @Date    : 2018年8月12日03:43:54
+# @Author  : Joker
+# @QQ      : 450156750
+# @github  : https://github.com/yuanxing008/price-bot
+
 import urllib
 import urllib.parse
 import urllib.request
@@ -30,10 +37,8 @@ def http_get_request(url, add_to_headers=None):
 
 init(autoreset=False)
 class Colored(object):
-    #  前景色:红色  背景色:默认
     def red(self, s):
         return Fore.LIGHTRED_EX + s + Fore.RESET
-    #  前景色:绿色  背景色:默认
     def green(self, s):
         return Fore.LIGHTGREEN_EX + s + Fore.RESET
     def yellow(self, s):
@@ -75,11 +80,6 @@ def npw():
 		cryptopia_cny = float(cryptopia_data['LastPrice']) * 6300 * 6.8
 		print("|      BTC      |    CNY       |")
 		print("|%s     |%s    |" %(cryptopia_last_price, cryptopia_cny))
-		# table2 = PrettyTable(["BTC","CNY"])
-		# table2.align["BTC"]  = 1
-		# table2.padding_width = 1
-		# table2.add_row =([cryptopia_last_price, cryptopia_cny])
-		# print(table2)
 
 	except BaseException as e:
 		print("http请求失败，详情:%s,%s" %(cryptopia_data,e))
@@ -89,4 +89,3 @@ if __name__ == '__main__':
 	n = 120
 	while( --n ):
 		data = npw()
-	# print(data)
